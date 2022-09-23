@@ -1,0 +1,51 @@
+def translate_morze(word_input):
+
+    dict_morze = {
+                    '.-' : 'а',
+                    '-...' : 'б',
+                    '.--' : 'в',
+                    '--.' : 'г',
+                    '-..' : 'д',
+                    '.' : 'е',
+                    '...-' : 'ж',
+                    '--..' : 'з',
+                    '..' : 'и',
+                    '.---' : 'й',
+                    '-.-' : 'к',
+                    '.-..' : 'л',
+                    '--' : 'м',
+                    '-.' : 'н',
+                    '---' : 'о',
+                    '.--.' : 'п',
+                    '.-.' : 'р',
+                    '...' : 'с',
+                    '-' : 'т',
+                    '..-' : 'у',
+                    '..-.' : 'ф',
+                    '....' : 'х',
+                    '-.-.' : 'ц',
+                    '---.' : 'ч',
+                    '----' : 'ш',
+                    '--.-' : 'щ',
+                    '.--.-.' : 'ъ',
+                    '-.--' : 'ы',
+                    '-..-' : 'ь',
+                    '..-..' : 'э',
+                    '..--' : 'ю',
+                    '.-.-' : 'я'
+       }
+    
+    by_letter = word_input.split()
+    
+    word_output = ''
+    for i in by_letter:
+        word_output = word_output + dict_morze[i]
+    
+    return word_output
+
+
+by_words_input = input().split(' / ')
+by_words_input[-1] = by_words_input[-1][:-4]   # Удаление End в конце предложения
+
+for i in by_words_input:
+    print(translate_morze(i), end = ' ')
